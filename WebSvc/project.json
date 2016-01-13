@@ -25,6 +25,7 @@
     "frameworks": {
       "dnx451": {
         "dependencies": {
+          "DumbActor.Interfaces": "1.0.0-*",
           "FirstStatefulService.Interface": "1.0.0-*"
         }
       }

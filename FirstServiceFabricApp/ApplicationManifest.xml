@@ -6,6 +6,9 @@
       <Parameter Name="FirstStatefulService_TargetReplicaSetSize" DefaultValue="3" />
    </Parameters>
    <ServiceManifestImport>
+     <ServiceManifestRef ServiceManifestName="DumbActorPkg" ServiceManifestVersion="1.0.0" />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="WebSvc" ServiceManifestVersion="1.0.0" />
    </ServiceManifestImport>
    <ServiceManifestImport>

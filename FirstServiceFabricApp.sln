@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstStatefulService.Interf
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebSvc", "WebSvc\WebSvc.xproj", "{8CACF6F5-78D2-4CCC-8E05-B0D118A48893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumbActor", "DumbActor\DumbActor.csproj", "{87EBD651-94CB-4565-95C7-37CDF256AF21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumbActor.Interfaces", "DumbActor.Interfaces\DumbActor.Interfaces.csproj", "{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,18 @@ Global
 		{8CACF6F5-78D2-4CCC-8E05-B0D118A48893}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CACF6F5-78D2-4CCC-8E05-B0D118A48893}.Release|x64.ActiveCfg = Release|Any CPU
 		{8CACF6F5-78D2-4CCC-8E05-B0D118A48893}.Release|x64.Build.0 = Release|Any CPU
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Debug|x64.ActiveCfg = Debug|x64
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Debug|x64.Build.0 = Debug|x64
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Release|Any CPU.ActiveCfg = Release|x64
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Release|x64.ActiveCfg = Release|x64
+		{87EBD651-94CB-4565-95C7-37CDF256AF21}.Release|x64.Build.0 = Release|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Debug|x64.ActiveCfg = Debug|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Debug|x64.Build.0 = Debug|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Release|Any CPU.ActiveCfg = Release|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Release|x64.ActiveCfg = Release|x64
+		{7C044AE2-1CC1-401B-9B54-3CAF8322B9AD}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
