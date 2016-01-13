@@ -22,7 +22,11 @@
     },
 
     "frameworks": {
-        "dnx451": { }
+      "dnx451": {
+        "dependencies": {
+          "FirstStatefulService.Interface": "1.0.0-*"
+        }
+      }
     },
 
     "exclude": [
