@@ -6,10 +6,18 @@
       <Parameter Name="FirstStatefulService_TargetReplicaSetSize" DefaultValue="3" />
    </Parameters>
    <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="WebSvc" ServiceManifestVersion="1.0.0" />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="FirstStatefulServicePkg" ServiceManifestVersion="1.0.0" />
       <ConfigOverrides />
    </ServiceManifestImport>
    <DefaultServices>
+      <Service Name="WebSvcService">
+         <StatelessService ServiceTypeName="WebSvcType">
+            <SingletonPartition />
+         </StatelessService>
+      </Service>
       <Service Name="FirstStatefulService">
          <StatefulService ServiceTypeName="FirstStatefulServiceType" TargetReplicaSetSize="[FirstStatefulService_TargetReplicaSetSize]" MinReplicaSetSize="[FirstStatefulService_MinReplicaSetSize]">
             <UniformInt64Partition PartitionCount="[FirstStatefulService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
