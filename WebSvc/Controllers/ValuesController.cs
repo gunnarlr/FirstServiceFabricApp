@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using FirstStatefulService.Interface;
+using Microsoft.ServiceFabric.Services.Remoting.Client;
 
 namespace WebSvc.Controllers
 {
@@ -11,9 +13,13 @@ namespace WebSvc.Controllers
     {
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value666" };
+            ICounter counter =
+                    ServiceProxy.Create<ICounter>(0, new Uri("fabric:/FirstServiceFabricApp/FirstStatefulService"));
+            long count = await counter.GetCountAsync();
+
+            return new string[] { count.ToString() };
         }
 
         // GET api/values/5
