@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../VerySimpleActor.Interfaces/VerySimpleActor.Interfaces.csproj",
+      "bin": {
+        "assembly": "../../VerySimpleActor.Interfaces/obj/x64/{configuration}/VerySimpleActor.Interfaces.dll",
+        "pdb": "../../VerySimpleActor.Interfaces/obj/x64/{configuration}/VerySimpleActor.Interfaces.pdb"
+      },
+      "dependencies": {
+        "Microsoft.ServiceFabric": "4.4.87-preview",
+        "Microsoft.ServiceFabric.Actors": "1.4.87-preview",
+        "Microsoft.ServiceFabric.Data": "1.4.87-preview",
+        "Microsoft.ServiceFabric.Services": "1.4.87-preview"
+      }
+    }
+  }
+}
