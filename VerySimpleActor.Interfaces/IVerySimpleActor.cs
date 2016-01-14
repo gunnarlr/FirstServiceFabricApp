@@ -4,11 +4,10 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Actors;
-using Microsoft.ServiceFabric.Services.Remoting;
 
-namespace DumbActor.Interfaces
+namespace VerySimpleActor.Interfaces
 {
-    public interface IDumbActor : IActor, IService
+    public interface IVerySimpleActor : IActor
     {
         Task<string> GetRandomValue();
     }

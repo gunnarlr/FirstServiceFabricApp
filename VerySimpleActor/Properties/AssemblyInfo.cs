@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DumbActor.Interfaces")]
+[assembly: AssemblyTitle("VerySimpleActor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DumbActor.Interfaces")]
+[assembly: AssemblyProduct("VerySimpleActor")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7c044ae2-1cc1-401b-9b54-3caf8322b9ad")]
+[assembly: Guid("24528921-5492-4569-8fac-d005a0fe0287")]
 
 // Version information for an assembly consists of the following four values:
 //

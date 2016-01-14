@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DumbActor
+namespace VerySimpleActor
 {
-    [EventSource(Name = "MyCompany-FirstServiceFabricApp-DumbActor")]
+    [EventSource(Name = "MyCompany-FirstServiceFabricApp-VerySimpleActor")]
     internal sealed class ActorEventSource : EventSource
     {
         public static readonly ActorEventSource Current = new ActorEventSource();

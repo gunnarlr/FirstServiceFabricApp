@@ -4,7 +4,7 @@ using System.Fabric;
 using System.Threading;
 using Microsoft.ServiceFabric.Actors;
 
-namespace DumbActor
+namespace VerySimpleActor
 {
     internal static class Program
     {
@@ -22,7 +22,7 @@ namespace DumbActor
                     // The contents of your ServiceManifest.xml and ApplicationManifest.xml files
                     // are automatically populated when you build this project.
                     // For information, see http://aka.ms/servicefabricactorsplatform
-                    fabricRuntime.RegisterActor<DumbActor>();
+                    fabricRuntime.RegisterActor<VerySimpleActor>();
 
                     Thread.Sleep(Timeout.Infinite);  // Prevents this host process from terminating so services keeps running.
                 }

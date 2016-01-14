@@ -17,8 +17,8 @@
     <ServiceFabricServiceManifestPath>PackageRoot\ServiceManifest.xml</ServiceFabricServiceManifestPath>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DumbActor.Interfaces\DumbActor.Interfaces.csproj" />
     <ProjectReference Include="..\FirstStatefulService.Interface\FirstStatefulService.Interface.csproj" />
+    <ProjectReference Include="..\VerySimpleActor.Interfaces\VerySimpleActor.Interfaces.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>
