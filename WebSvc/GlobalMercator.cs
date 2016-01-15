@@ -57,15 +57,10 @@ namespace MoreMapsTileFetcher
         //Converts pixel coordinates in given zoom level of pyramid to EPSG:900913
         public static Point PixelsToMeters(Point p, int zoom)
         {
-            // Convert to meters
             var res = Resolution(zoom);
             var meters = new Point();
             meters.X = p.X * res - OriginShift;
-            meters.Y = p.Y * res;// - OriginShift;
-                        
-            // The abstraction of Google having origo top left and BBOX having origo center need to go here
-            //meters.Y = 2 * Math.PI * EarthRadius - meters.Y;
-            meters.Y = meters.Y - OriginShift;
+            meters.Y = p.Y * res - OriginShift;
 
             return meters;
         }
@@ -83,7 +78,7 @@ namespace MoreMapsTileFetcher
         }
 
         /// <summary>
-        /// A rectangle defined by top left and bottom right points. Origo bottom left.
+        /// A rectangle defined by bottom left and top right points (Origo bottom left)
         /// </summary>
         public struct Rect
         {
@@ -92,19 +87,17 @@ namespace MoreMapsTileFetcher
                 P1 = p1;
                 P2 = p2;
 
-                // The Google maps coordinate system works with upper (north) left as origo
-                Left = P1.X;
-                Right = P2.X;
-                Top = P2.Y;
-                Bottom = P1.Y;
+                West = P1.X;
+                South = P1.Y;
+                East = P2.X;
+                North = P2.Y;
             }
 
-            // NB: Google tile system is top left (x,y) = (0,0)
-            public double Left { get; internal set; }
-            public double Right { get; internal set; }
-            public double Top { get; internal set; }
-            public double Bottom { get; internal set; }
-
+            public double West { get; internal set; }
+            public double South { get; internal set; }
+            public double East { get; internal set; }
+            public double North { get; internal set; }
+            
             public Point P1 { get; set; }
             public Point P2 { get; set; }
 

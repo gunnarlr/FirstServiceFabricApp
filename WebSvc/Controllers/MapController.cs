@@ -70,10 +70,10 @@ namespace WebSvc.Controllers
 
             var theTileBounds = GlobalMercator.TileBounds(new GlobalMercator.Tile(x, y), zoom);
             string urlBase = "http://wms.geonorge.no/skwms1/wms.ecc_enc?LAYERS=cells&STYLES=style-id-263&FORMAT=image%2Fpng&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG%3A900913";
-            string urlBBox = "&BBOX=" + theTileBounds.Left.ToString(CultureInfo.InvariantCulture) + ","
-                                        + theTileBounds.Bottom.ToString(CultureInfo.InvariantCulture) + ","
-                                        + theTileBounds.Right.ToString(CultureInfo.InvariantCulture) + ","
-                                        + theTileBounds.Top.ToString(CultureInfo.InvariantCulture);
+            string urlBBox = "&BBOX=" + theTileBounds.West.ToString(CultureInfo.InvariantCulture) + ","
+                                        + theTileBounds.South.ToString(CultureInfo.InvariantCulture) + ","
+                                        + theTileBounds.East.ToString(CultureInfo.InvariantCulture) + ","
+                                        + theTileBounds.North.ToString(CultureInfo.InvariantCulture);
             string urlTileSize = "&WIDTH=256&HEIGHT=256";
             string urlTicket = "&ticket=" + theTicket;
             url = urlBase + urlBBox + urlTileSize + urlTicket;
