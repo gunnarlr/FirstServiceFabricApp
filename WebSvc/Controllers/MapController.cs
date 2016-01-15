@@ -8,6 +8,8 @@ using MoreMapsTileFetcher;
 using System.Net;
 using System.IO;
 using System.Globalization;
+using Microsoft.ServiceFabric.Actors;
+using TileFetcherActor.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,6 +18,9 @@ namespace WebSvc.Controllers
     [Route("api/[controller]")]
     public class MapController : Controller
     {
+        private const string theApplicationUri = "fabric:/FirstServiceFabricApp";
+        
+        #region Helpers. REFACTOR ME.
         internal string buildKartverketURLString(string mapKey)
         {
             string _wmsCacheKartverketUrlHead = @"http://opencache3.statkart.no/gatekeeper/gk/gk.open_gmaps?layers=";
@@ -79,6 +84,7 @@ namespace WebSvc.Controllers
             url = urlBase + urlBBox + urlTileSize + urlTicket;
             return url;
         }
+        #endregion
 
         private const string defName = "empty";
         private const int defX = -1;
@@ -86,7 +92,7 @@ namespace WebSvc.Controllers
         private const int defZoom = -1;
         // GET api/map?X=xvalue....
         [HttpGet]
-        public string Get(string name = defName, int x = defX, int y = defY, int zoom = defZoom)
+        public async Task<MemoryStream> Get(string name = defName, int x = defX, int y = defY, int zoom = defZoom)
         {
             // Look here for mental model http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/
             //int x = 69;
@@ -98,6 +104,11 @@ namespace WebSvc.Controllers
             // y =1877
             // zoom=13
 
+            // Talk to a stateless ACTOR to get a tile
+            var tileFetcherActor = ActorProxy.Create<ITileFetcherActor>(ActorId.NewId(), theApplicationUri);
+            var theTile = await tileFetcherActor.FetchTile(name, x, y, zoom);
+            return theTile;
+#if false
             if (name == defName || x == defX || y == defY || zoom == defZoom)
             {
                 var helpful = string.Format("Try this: http://localhost:33005/api/map?name={0}&x={1}&y={2}&zoom={3}", "Electron", 4462, 1877, 13);
@@ -112,6 +123,7 @@ namespace WebSvc.Controllers
 
                 return dill;
             }
+#endif
         }
     }
 }

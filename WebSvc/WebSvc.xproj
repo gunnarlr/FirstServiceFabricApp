@@ -18,6 +18,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\FirstStatefulService.Interface\FirstStatefulService.Interface.csproj" />
+    <ProjectReference Include="..\TileFetcherActor.Interfaces\TileFetcherActor.Interfaces.csproj" />
     <ProjectReference Include="..\VerySimpleActor.Interfaces\VerySimpleActor.Interfaces.csproj" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />

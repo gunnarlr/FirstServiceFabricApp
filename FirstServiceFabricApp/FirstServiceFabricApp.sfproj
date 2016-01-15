@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FirstStatefulService\FirstStatefulService.csproj" />
+    <ProjectReference Include="..\TileFetcherActor\TileFetcherActor.csproj" />
     <ProjectReference Include="..\VerySimpleActor\VerySimpleActor.csproj" />
     <ProjectReference Include="..\WebSvc\WebSvc.xproj" />
   </ItemGroup>

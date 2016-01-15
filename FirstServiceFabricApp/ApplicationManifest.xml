@@ -2,6 +2,7 @@
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="FirstServiceFabricAppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
    <Parameters>
       <Parameter Name="VerySimpleActorService_PartitionCount" DefaultValue="10" />
+      <Parameter Name="TileFetcherActorService_PartitionCount" DefaultValue="10" />
       <Parameter Name="FirstStatefulService_MinReplicaSetSize" DefaultValue="2" />
       <Parameter Name="FirstStatefulService_PartitionCount" DefaultValue="1" />
       <Parameter Name="FirstStatefulService_TargetReplicaSetSize" DefaultValue="3" />
@@ -11,6 +12,9 @@
    </ServiceManifestImport>
    <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="VerySimpleActorPkg" ServiceManifestVersion="1.0.0" />
+   </ServiceManifestImport>
+   <ServiceManifestImport>
+      <ServiceManifestRef ServiceManifestName="TileFetcherActorPkg" ServiceManifestVersion="1.0.0" />
    </ServiceManifestImport>
    <ServiceManifestImport>
       <ServiceManifestRef ServiceManifestName="FirstStatefulServicePkg" ServiceManifestVersion="1.0.0" />
@@ -25,6 +29,11 @@
       <Service Name="VerySimpleActorService" GeneratedIdRef="e9d9fac3-4cdc-4b84-9546-add309ec7a43">
          <StatelessService ServiceTypeName="VerySimpleActorServiceType">
             <UniformInt64Partition PartitionCount="[VerySimpleActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+         </StatelessService>
+      </Service>
+      <Service Name="TileFetcherActorService" GeneratedIdRef="64df4cd9-e6fe-4109-80d1-2bd3d95ef430">
+         <StatelessService ServiceTypeName="TileFetcherActorServiceType">
+            <UniformInt64Partition PartitionCount="[TileFetcherActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
          </StatelessService>
       </Service>
       <Service Name="FirstStatefulService">

@@ -26,6 +26,7 @@
       "dnx451": {
         "dependencies": {
           "FirstStatefulService.Interface": "1.0.0-*",
+          "TileFetcherActor.Interfaces": "1.0.0-*",
           "VerySimpleActor.Interfaces": "1.0.0-*"
         }
       }
