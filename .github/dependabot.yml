@@ -1,0 +1,28 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Microsoft.ServiceFabric.Actors
+    versions:
+    - 4.2.452
+    - 4.2.457
+    - 4.2.477
+  - dependency-name: Microsoft.ServiceFabric
+    versions:
+    - 7.2.452
+    - 7.2.457
+    - 7.2.477
+  - dependency-name: Microsoft.ServiceFabric.Data
+    versions:
+    - 4.2.452
+    - 4.2.457
+    - 4.2.477
+  - dependency-name: Microsoft.ServiceFabric.Services
+    versions:
+    - 4.2.452
+    - 4.2.457
+    - 4.2.477
